@@ -1,0 +1,136 @@
+/* Modal stil */
+.modal {
+    display: none; /* Varsayılan olarak gizli */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Siyah arka plan */
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px; /* Daha geniş bir düzen için artırıldı */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    margin: 20px auto; /* Alt boşluk eklendi */
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333; /* Yazı rengini koyulaştırdık */
+}
+
+/* Name row için stil */
+.name-row {
+    display: flex;
+    gap: 15px; /* İlk ad ve soyad arasında daha fazla boşluk */
+    
+}
+
+.name-row input {
+    width: 100%; /* Genişlik ayarı düzgün görünsün diye artırıldı */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Genel input stili */
+.modal-content input {
+    width: 100%; /* Name-row dışındaki inputlar tam genişlikte */
+    padding: 12px; /* Daha fazla iç boşluk için artırıldı */
+    margin-bottom: 20px; /* Inputlar arasında daha fazla boşluk */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Checkbox ve etiket stili */
+.modal-content label {
+    display: flex;
+    align-items: center; /* Checkbox ve yazıyı aynı hizaya getirir */
+    margin-bottom: 15px; /* Checkboxlar arasında boşluk */
+    text-align: left;
+    color: #333;
+    font-size: 14px;
+    gap: 10px; /* Checkbox ile yazı arasındaki boşluk */
+    justify-content: flex-start; /* Yazıyı checkbox’a yakın hizalar */
+}
+
+.modal-content label input[type="checkbox"] {
+    margin: 0; /* Fazladan boşluk kaldırıldı */
+    transform: scale(1.2); /* Checkbox boyutu biraz büyütüldü */
+}
+
+/* reCAPTCHA alanı */
+.modal-content .g-recaptcha {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #E50000;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+.modal-content button:hover {
+    background-color: #C00000;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close-button:hover {
+    color: #E50000;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+
+    .modal-content button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .modal-content input {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .name-row {
+        flex-direction: column; /* Mobil cihazlarda alt alta */
+    }
+
+    .name-row input {
+        width: 100%;
+    }
+}

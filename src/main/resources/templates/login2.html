@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+    <link th:href="@{/css/kayıt_ol.css}" rel="stylesheet">
+    <link th:href="@{/css/mesaj.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-box">
+        <img th:src="@{/logo/costmaplogo.png}" width="200px" alt="Logo">
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <div class="login-form">
+                <div class="logo">
+                    <img th:src="@{/logo/giriş.png}" width="100px" alt="User Logo">
+                </div>
+                <h2>Giriş Yap</h2>
+                <form id="login-form" method="post">
+                    <input type="text" id="login-username" name="username" placeholder="Kullanıcı Adı" required>
+                    <input type="password" id="login-password" name="password" placeholder="Şifre" required>
+                    <button type="submit">GİRİŞ YAP</button>
+                </form>
+                <a id="open-modal" class="create-account">Hesabınız Yok Mu? Hemen Hesap Oluştur</a>
+            </div>
+        </div>
+        <div class="info-box">
+            <h2>COSTMAP İŞLETME YÖNETİMİ</h2>
+            <p>Sizi ve işletmenizin ihtiyaçlarını anlayan, sadece haritalamakla kalmayan şirketinize özel çözümlerle işinize değer katan costmap işlemte Yönetimi ile işler hep yolunda!</p>
+            <button id="open-modal">Kayıt Ol</button>
+        </div>
+    </div>
+
+    <!-- Kayıt Ol Modalı -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-modal">&times;</span>
+            <h2>Kayıt Ol</h2>
+			<form id="register-form">
+			    <div class="name-row">
+			        <input type="text" id="firstName" name="firstName" placeholder="Adınız" required>
+			        <input type="text" id="lastName" name="lastName" placeholder="Soyadınız" required>
+			    </div>
+			    <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" required>
+			    <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" required>
+			    <input type="password" id="password" name="password" placeholder="Şifreniz" required>
+			    <input type="text" id="refCode" name="refCode" placeholder="Referans Kodunuz">
+			    <label>
+			        <input type="checkbox" id="marketingConsent" name="marketingConsent">
+			        Ticari elektronik ileti gönderilmesine onay veriyorum.
+			    </label>
+			    <button type="submit">Devam Et</button>
+			</form>
+        </div>
+    </div>
+    
+    <!-- Bildirim Modalı -->
+	<div id="notification-modal" class="notification-modal" >
+	    <div class="notification-content">
+	        <img id="notification-icon"  alt="icon">
+	        <p id="notification-message"></p>
+	    </div>
+	</div>
+	
+	<script th:src="@{js/script.js}"></script>
+
+
+
+</body>
+</html>

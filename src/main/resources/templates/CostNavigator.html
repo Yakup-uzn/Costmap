@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>costmap</title>
+	
+    <link rel="stylesheet" href="../templates/css/style.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+	
+</head>
+
+<body>
+
+    <header>
+
+        <div class="companyBar">
+            <a href="#" class="logo">Costmap</a>
+
+            <div id="companyLogo">
+                <img src="../static/logo/costmaplogo.png" alt="">
+            </div>
+
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><span id="menuicon" class="material-symbols-outlined"> menu</span></label>
+
+
+        <nav class="navbar">
+            <ul>
+
+                <li><a href="">Anasayfa</a></li>
+                <li><a href="">Hakkımızda</a></li>
+
+                <li><a href="#" id="hizmetler-link">Hizmetler</a></li>
+                <li><a id="projelerLink" href="">CostNavigator</a></li>
+                <li><a href="login.html">Costmap my business</a></li>
+
+            </ul>
+        </nav>
+		
+    </header>
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+	    <script>
+	        // Harita öğesini seçip başlat
+	        var map = L.map('map').setView([39.92077, 32.85411], 13); // Ankara koordinatları
+
+	        // OpenStreetMap Katmanı Ekle
+	        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	            maxZoom: 19,
+	            attribution: '© OpenStreetMap Katkıda Bulunanlar'
+	        }).addTo(map);
+
+	        // Marker Ekle
+	        L.marker([39.92077, 32.85411]).addTo(map)
+	            .bindPopup('Ankara, Türkiye')
+	            .openPopup();
+	    </script>
+
+</body>
+
+</html>
+

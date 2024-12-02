@@ -1,0 +1,166 @@
+/* Temel sıfırlama */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Y ekseninde ortalama */
+    align-items: center; /* X ekseninde ortalama */
+    min-height: 100vh; /* Tam ekran yüksekliği */
+    margin: 0;
+}
+
+/* Logo için düzenleme */
+.logo-box {
+    display: block; /* Doğal akışta yer alması için block yapıldı */
+    width: 100%; /* Tüm genişliği kaplar */
+    text-align: left; /* Solda hizalama */
+    padding: 10px 20px; /* Üst ve yanlardan boşluk */
+    margin-bottom: 20px; /* Container ile boşluk bırakıldı */
+}
+
+.logo-box img {
+    max-width: 150px; /* Logo genişliği */
+    height: auto; /* Oran korunsun */
+}
+
+/* Container düzenlemesi */
+.container {
+    display: flex;
+    flex-direction: row; /* Yan yana yerleşim */
+    justify-content: space-between; /* İçerik arasında eşit boşluk */
+    width: 90%; /* Genişlik */
+    max-width: 1000px; /* Maksimum genişlik */
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	margin-bottom: 50px;
+}
+
+/* Login ve Info Box */
+.login-box, .info-box {
+    padding: 20px;
+    flex: 1;
+}
+
+.login-box {
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box form {
+    width: 100%;
+    max-width: 300px;
+}
+
+.login-box form input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #E50000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-box form button:hover {
+    background-color: #C00000;
+}
+
+.login-box .create-account {
+    display: block;
+    margin-top: 10px;
+    color: rgb(196, 0, 0);
+    text-decoration: none;
+}
+
+.login-box .create-account:hover {
+    text-decoration: underline;
+}
+
+.info-box {
+    background: linear-gradient(to bottom, #8E0E00, #1F1C18);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  
+    color: #fff;
+    text-align: left;
+}
+
+.info-box h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.info-box button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.info-box button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Mobilde dikey akış */
+        width: 95%; /* Daha küçük genişlik */
+    }
+
+    .info-box {
+        text-align: center;
+    }
+
+    .logo-box img {
+        max-width: 120px; /* Mobilde logo boyutu */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-box {
+        text-align: center; /* Küçük ekranlarda merkezde */
+        margin-bottom: 10px;
+    }
+
+    .logo-box img {
+        max-width: 100px; /* Daha küçük ekranlarda logo */
+    }
+}

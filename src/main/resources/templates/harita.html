@@ -1,0 +1,194 @@
+<html lang="TR">
+<meta charset="utf-8">
+
+<head>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApHFn4Y_CwNHZf_uvcwG67ppjRtpRunxg&callback=initMap&libraries=&v=weekly"
+	async></script>
+<style>
+	#harita {width: 100%;height: 100%;border: none;}
+</style>
+	
+</head>
+<body>
+	<div id="harita">
+		
+	</div>
+</body>
+</html>
+
+<script>
+function initMap()
+{
+	
+	var a="../static/logo/costmaplogo.png";
+	var harita = new google.maps.Map(document.getElementById("harita"), {
+		center :{lat:41.02928267049072,lng:29.003468488503717},
+		zoom:10,
+		clickableIcons:false,
+		//disableDefaultUI: !0
+	});
+	
+	marker = new google.maps.Marker({
+		position:{lat:39.92058157116899, lng:32.85353497414459},
+		map:harita,
+		icon: {
+		    url: a,  // Yerel ikona giden yol
+		    scaledSize: new google.maps.Size(32, 32), // İkon boyutunu ayarlama
+		    anchor: new google.maps.Point(16, 16)     // İkonun konumunu hizalama
+		},
+		titile:"Kızılay AVM"
+	})
+	
+	//Boğaziçi Köprüsü
+	marker = new google.maps.Marker({
+		position:{lat:41.046159738274675,lng: 29.033648490502106},
+		map:harita,
+		icon: {
+		    url: "/Users/osmanbatuhankalkan/Desktop/costmap/target/classes/static/icons/costmap_icon_fully_transparent.png",  // Yerel ikona giden yol
+		    scaledSize: new google.maps.Size(40, 40), // İkon boyutunu ayarlama
+		    anchor: new google.maps.Point(20, 20)     // İkonun konumunu hizalama
+		},
+		titile:"Boğaziçi Köprüsü"
+	})
+	var konumlar = [
+
+	{lat:41.04921651238089,lng: 29.030677183239682},
+	{lat:41.04571527390066, lng:29.034370615058652},
+	{lat:41.04209630637569, lng:29.038176224070575},
+	{lat:41.04188415382848, lng:29.037894939926222},
+	{lat:41.045528090805924, lng:29.034105877040435},
+	{lat:41.04907200034053, lng:29.03033336028079}
+	
+	];
+
+	var ucgen = new google.maps.Polygon({
+		path: konumlar,
+		strokeColor: "red",
+		strokeWeight:7,
+		strokeOpacity:1
+	});
+	ucgen.setMap(harita);	
+
+	//Fatih Sultan Mehmet Köprüsü
+	marker = new google.maps.Marker({
+		position:{lat:41.09176234454881, lng:29.061371099009758},
+		map:harita,
+		icon: {
+		    url: a,  // Yerel ikona giden yol
+		    scaledSize: new google.maps.Size(40, 40), // İkon boyutunu ayarlama
+		    anchor: new google.maps.Point(20, 20)     // İkonun konumunu hizalama
+		},
+		titile:"Fatih Sultan Mehmet Köprüsü"
+	})
+	var konumlar = [
+	{lat:41.09125516899293,lng: 29.05630653592165},
+	{lat:41.09157485843805,lng: 29.062838931116556},
+	{lat:41.091739269546935,lng: 29.066656564672016},
+	{lat:41.09141958090185,lng: 29.066232383165854},
+	{lat:41.09126430299867,lng: 29.061493669768435},
+	{lat:41.091026818436895,lng: 29.056706478484603}
+
+	
+	];
+
+	var ucgen2 = new google.maps.Polygon({
+		path: konumlar,
+		strokeColor: "red",
+		strokeWeight:7,
+		strokeOpacity:1
+	});
+
+	ucgen2.setMap(harita);
+	//Yavuz Sultan Selim Köprüsü
+	marker = new google.maps.Marker({
+		position:{lat:41.20256810545002, lng:29.112359781588417},
+		map:harita,
+		icon: {
+		    url: a,  // Yerel ikona giden yol
+		    scaledSize: new google.maps.Size(45, 45), // İkon boyutunu ayarlama
+		    anchor: new google.maps.Point(20, 20)     // İkonun konumunu hizalama
+		},
+		titile:"Yavuz Sultan Selim Köprüsü"
+	})
+	var konumlar = [
+	{lat:41.20570362831012, lng:29.10641156855575},
+	{lat:41.202883230735054, lng:29.112672705659723},
+	{lat:41.20018273616886, lng:29.11877432334703},
+	{lat:41.199702636580035, lng:29.118295765097045},
+	{lat:41.20249316618315, lng:29.1122340272639},
+	{lat:41.205313580569545,lng: 29.106132409576585}
+
+
+	];
+
+	var ucgen3 = new google.maps.Polygon({
+		path: konumlar,
+		strokeColor: "red",
+		strokeWeight:7,
+		strokeOpacity:1
+	});
+
+	ucgen3.setMap(harita);
+	//Osmangazi Köprüsü
+	marker = new google.maps.Marker({
+		position:{lat:40.75533925244839, lng:29.515632881142302},
+		map:harita,
+		icon: {
+		    url: "../static/logo/costmaplogo.png",  // Yerel ikona giden yol
+		    scaledSize: new google.maps.Size(45, 45), // İkon boyutunu ayarlama
+		    anchor: new google.maps.Point(20, 20)     // İkonun konumunu hizalama
+		},
+		titile:"Osmangazi Köprüsü"
+	})
+	var konumlar = [
+	{lat:40.76639155246035,lng: 29.517954276429958},
+	{lat:40.755402054798665,lng: 29.516296136938774},
+	{lat:40.74233788879913,lng: 29.514223462574794},
+	{lat:40.7430288464702,lng: 29.513145671905527},
+	{lat:40.75552765932126,lng: 29.51546706719318},
+	{lat:40.76639155246035,lng: 29.517208113658924}
+
+
+	];
+
+	var ucgen4 = new google.maps.Polygon({
+		path: konumlar,
+		strokeColor: "red",
+		strokeWeight:7,
+		strokeOpacity:1
+	});
+
+	ucgen4.setMap(harita);
+	//1915 Çanakkale Köprüsü
+	marker = new google.maps.Marker({
+		position:{lat:40.33869883426484,lng: 26.637604874807995},
+		map:harita,
+		icon: {
+		    url: a,  // Yerel ikona giden yol
+		    scaledSize: new google.maps.Size(45, 45), // İkon boyutunu ayarlama
+		    anchor: new google.maps.Point(20, 20)     // İkonun konumunu hizalama
+		},
+		titile:"1915 Çanakkale Köprüsüü"
+	})
+	var konumlar = [
+	{lat:40.34870593296722,lng: 26.61937387524793},
+	{lat:40.33901755456191,lng: 26.638357530753137},
+	{lat:40.32951904362033,lng: 26.657341186258343},
+	{lat:40.32932778470263,lng: 26.656337644998157},
+	{lat:40.33869883426484,lng: 26.63768850324635},
+	{lat:40.3481323177393,lng: 26.618788476179486}
+
+
+	];
+
+	var ucgen5 = new google.maps.Polygon({
+		path: konumlar,
+		strokeColor: "red",
+		strokeWeight:7,
+		strokeOpacity:1
+	});
+
+	ucgen5.setMap(harita);					
+}	
+</script>
